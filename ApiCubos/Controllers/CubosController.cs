@@ -47,6 +47,14 @@ namespace ApiCubos.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("[action]/{username}")]
+        public async Task<ActionResult<Usuario>> GetUsuario(string username)
+        {
+            Usuario usuario = await this.repo.GetUsuarioAsync(username);
+            return usuario;
+        }
+
         [Authorize]
         [HttpGet]
         [Route("[action]")]

@@ -46,9 +46,9 @@ namespace ApiCubos.Repositories
             await this.context.SaveChangesAsync();
         }
 
-        public async Task<Usuario> GetUsuarioAsync(int idusuario)
+        public async Task<Usuario> GetUsuarioAsync(string username)
         {
-            return await this.context.Usuarios.FirstOrDefaultAsync(x => x.IdUsuario == idusuario);
+            return await this.context.Usuarios.FirstOrDefaultAsync(x => x.Email == username);
         }
 
         public async Task<List<Compra>> GetComprasUsuarioAsync(int idusuario)
