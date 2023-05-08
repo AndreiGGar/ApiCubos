@@ -35,13 +35,14 @@ namespace ApiCubos.Repositories
             }
         }
 
-        public async Task NuevoCuboAsync(string nombre, string marca, string imagen)
+        public async Task NuevoCuboAsync(string nombre, string marca, string imagen, int precio)
         {
             Cubo cubo = new Cubo();
             cubo.IdCubo = GetMaxIdCubo();
             cubo.Nombre = nombre;
             cubo.Marca = marca;
             cubo.Imagen = imagen;
+            cubo.Precio = precio;
             this.context.Cubos.Add(cubo);
             await this.context.SaveChangesAsync();
         }

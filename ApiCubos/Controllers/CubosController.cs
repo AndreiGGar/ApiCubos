@@ -43,7 +43,7 @@ namespace ApiCubos.Controllers
         [Route("[action]")]
         public async Task<ActionResult> NuevoCubo(Cubo cubo)
         {
-            await this.repo.NuevoCuboAsync(cubo.Nombre, cubo.Marca, cubo.Imagen);
+            await this.repo.NuevoCuboAsync(cubo.Nombre, cubo.Marca, cubo.Imagen, cubo.Precio);
             return Ok();
         }
 
